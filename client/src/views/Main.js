@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 import { Router, Link } from '@reach/router';
 import CreateProduct from '../components/CreateProduct';
 import AllProducts from '../components/AllProducts';

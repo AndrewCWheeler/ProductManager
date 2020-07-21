@@ -1,10 +1,9 @@
-import React from 'react'
-import ProductForm from './ProductForm'
+import React from 'react';
+import ProductForm from './ProductForm';
 import { useState } from 'react';
 import axios from 'axios';
-import { navigate } from '@reach/router'
+import { navigate } from '@reach/router';
 import { Container } from 'react-bootstrap';
-
 
 
 const CreateProduct = () => {
@@ -18,15 +17,16 @@ const CreateProduct = () => {
     const submitData = () => {
         axios.post("http://localhost:8000/api/products/new", product)
         .then(res => {
-            console.log(res);
             setProduct({
-            title: "",
-            price: "",
-            description: ""
+                title: "",
+                price: "",
+                description: ""
+            })
+            navigate("/")
         })
-        navigate("/")
-        .catch(err => console.log(err));
-    })
+        .catch(err => {
+        console.log(err);
+        })
     }
 
     return (

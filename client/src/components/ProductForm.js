@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 
 const ProductForm = props => {
@@ -22,7 +22,6 @@ const ProductForm = props => {
             className="my-4 offset-sm-4 justify-content-center"
             onSubmit={ submitHandler }
             >
-            
                 <Form.Group>
                     <Form.Label>Title</Form.Label>
                     <Form.Control 
