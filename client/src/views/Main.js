@@ -6,7 +6,7 @@ import CreateProduct from '../components/CreateProduct';
 import AllProducts from '../components/AllProducts';
 import OneProduct from '../components/OneProduct';
 import EditProduct from '../components/EditProduct';
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const Main = () => {
 
@@ -18,13 +18,12 @@ const Main = () => {
     return (
         <Container>
             <p className="mb-2">Message from the backend: {message}</p>
-            <Navbar bg="light" expand="lg">
-                <Nav className="mr-auto">
-                    <Link className="mr-5" to="/">All Products</Link>
-                    <Link to="/create"> Create Product</Link>
-                </Nav>
-            </Navbar>
-            
+            <Row className="text-center">
+                <Col className="my-4">
+                    <Link to="/">All Products</Link> |&nbsp;
+                    <Link to="/create">Create Product</Link>
+                </Col>
+            </Row>
             <Router>
                 <AllProducts path="/" />
                 <CreateProduct path="/create" />

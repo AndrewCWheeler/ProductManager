@@ -59,7 +59,7 @@ const ProductForm = props => {
                 className="col-sm-6 my-4 btn-primary btn-block btn-lg"
                 type="submit"
                 >
-                    Create
+                    Submit
                 </Button>
             </Form>
         </Container>

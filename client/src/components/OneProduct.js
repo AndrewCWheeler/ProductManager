@@ -27,7 +27,7 @@ const OneProduct = props => {
 
     return (
         <Container>
-            <h1>One Product for { product.title }</h1>
+            <h1 className="text-center">One Product for { product.title }</h1>
             <ul>
                 <li>Title: { product.title }</li>
                 <li>Price: { product.price }</li>

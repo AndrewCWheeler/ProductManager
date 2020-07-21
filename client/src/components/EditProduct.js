@@ -37,7 +37,7 @@ const EditProduct = props => {
 
     return (
         <Container>
-            <h1>Edit Product</h1>
+            <h1 className="text-center">Edit Product</h1>
             <ProductForm data={ product } setData={ setProduct } submitData={ submitData }/>
         </Container>
     )

@@ -29,7 +29,7 @@ const AllProducts = () => {
 
     return (
         <Container>
-            <h1>All Products</h1>
+            <h1 className="text-center">All Products</h1>
             <Table>
                 <thead>
                     <tr>
