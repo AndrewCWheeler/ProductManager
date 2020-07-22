@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 const OneProduct = props => {
 
@@ -14,9 +14,9 @@ const OneProduct = props => {
     });
 
     useEffect( () => {
-        axios.get(`http://localhost:8000/api/products/${props.id}`)
+        axios.get("http://localhost:8000/api/products/" + props.id)
         .then(res => {
-            if(res.data.message === "success")
+            if(res.data.message === "Success")
             {
                 setProduct(res.data.results);
             }
@@ -24,17 +24,20 @@ const OneProduct = props => {
             console.log(err);
         })
     }, []);
+    console.log(product);
 
     return (
         <Container>
             <h1 className="text-center">One Product for { product.title }</h1>
-            <ul>
-                <li>Title: { product.title }</li>
-                <li>Price: { product.price }</li>
-                <li>Description: { product.description }</li>
-                <li>Id: { product._id } </li>
-                <li>Added: { product.createdAt }</li>
-            </ul>
+            <Row>
+                <Col className="offset-sm-4">
+                    <p>Title: { product.title }</p>
+                    <p>Price: { product.price }</p>
+                    <p>Description: { product.description }</p>
+                    <p>Id: { product._id } </p>
+                    <p>Added: { product.createdAt }</p>
+                </Col>
+            </Row>
         </Container>
     )
 }
